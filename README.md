@@ -86,7 +86,7 @@ Example:
 
 ```hcl
 module "network" {
-  source = "git::https://github.com/<your-username>/terraform-azure-modules.git//network?ref=v1.0.0"
+  source = "git@github.com:Sandeep8954/terraform-azure-modules.git//resource_group?ref=v1.0.0"
 
   resource_group_name = "rg-dev"
   location            = "Central India"
