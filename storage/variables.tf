@@ -44,7 +44,24 @@ variable "account_replication_type" {
 variable "public_network_access_enabled" {
   description = "Allow public network access"
   type        = bool
-  default     = false
+  default     = true
+}
+
+variable "network_default_action" {
+  description = "Default network action for the storage account"
+  type        = string
+  default     = "Deny"
+
+  validation {
+    condition     = contains(["Allow", "Deny"], var.network_default_action)
+    error_message = "network_default_action must be either Allow or Deny."
+  }
+}
+
+variable "allowed_ip_addresses" {
+  description = "List of public IP addresses allowed to access the storage account"
+  type        = list(string)
+  default     = []
 }
 
 variable "shared_access_key_enabled" {
@@ -82,6 +99,7 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+<<<<<<< HEAD
 
 variable "network_default_action" {
   description = "Default network action for the storage account"
@@ -99,3 +117,5 @@ variable "allowed_ip_addresses" {
   type        = list(string)
   default     = []
 }
+=======
+>>>>>>> 0461a0d0069628b3e9b090bba487cdcb9c7e2fef

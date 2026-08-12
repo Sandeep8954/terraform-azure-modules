@@ -19,7 +19,6 @@ resource "azurerm_storage_account" "this" {
     ip_rules = var.allowed_ip_addresses
   }
 
-
   blob_properties {
     versioning_enabled = var.versioning_enabled
 
