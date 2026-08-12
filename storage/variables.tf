@@ -99,7 +99,6 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-<<<<<<< HEAD
 
 variable "network_default_action" {
   description = "Default network action for the storage account"
@@ -117,5 +116,3 @@ variable "allowed_ip_addresses" {
   type        = list(string)
   default     = []
 }
-=======
->>>>>>> 0461a0d0069628b3e9b090bba487cdcb9c7e2fef
