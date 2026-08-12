@@ -13,6 +13,12 @@ resource "azurerm_storage_account" "this" {
 
   shared_access_key_enabled = var.shared_access_key_enabled
 
+  network_rules {
+    default_action = var.network_default_action
+
+    ip_rules = var.allowed_ip_addresses
+  }
+
   blob_properties {
     versioning_enabled = var.versioning_enabled
 
